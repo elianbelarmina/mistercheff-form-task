@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%; /* Garantia da altura */
+}
+
+body {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+#leftMenu {
+    height: 100%;
+    background-color: #FF6600;
+    padding: 20px 25px 20px 25px;
+    flex-shrink: 0; /* Impede que ele encolha */
+}
+
+#menus ul li {
+    margin: 5px 0px 5px -55px;
+    padding: 15px 10px 10px 70px;
+    border-radius: 30px;
+    transition-duration: 0.29s;
+}
+
+#menus ul li:hover {
+    background-color: white; /* Altera o fundo do li para branco */
+}
+
+#ativasLink {
+    color: #FF7F29;
+    font-size: 18px;
+}
+
+#aguardando, #bloqueadas, #desativadas {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#menus ul li:hover a {
+    color: #FF7F29;
+}
+
+#ativas {
+    background-color: white;
+    border-radius: 30px;
+}
+
+#ativasLink {
+    color: #FF7F29;
+    font-weight: bold;
+}
+
+#aguardando, #bloqueadas, #desativadas {
+    color: white;
+    font-weight: bold;
+}
+
+#aguardando:hover, #bloqueadas:hover, #desativadas:hover {
+    color: #FF7F29;
+}
+
+#menuAtual {
+    background-color: #FFFFFF;
+    flex-grow: 1; /* Permite que o menu atual ocupe o restante da tela */
+}
+
+#title {
+    font-size: 35px;
+    padding: 15px;
+    border-bottom: 2px solid rgb(209, 209, 209);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cadastroLojaLink {
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+#cadastroLoja {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cadastroLoja:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para a exibição das lojas */
+#cadastrosSalvos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.loja {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Aumentamos a largura para 250px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-wrap: break-word; /* Garante que o texto não ultrapasse o container */
+}
+
+.loja img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.loja h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    word-break: break-all; /* Quebra palavras longas para evitar estouro do container */
+}
+
+.loja p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #cadastrosSalvos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loja {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas Cadastradas</title>
+    <link rel="stylesheet" href="style/styleCads.css">
+</head>
+<body>
+    <nav id="leftMenu">
+        <div id="logoMenu" style="display: flex; justify-content: center;">
+            <img src="imgs/unnamed.png" alt="Logo do MisterCheff" style="width: 150px; filter: grayscale(100%) brightness(0%) invert(100%); margin-bottom: 5px;">
+        </div>
+        <div id="menus">
+            <ul>
+                <li id="ativas"><a href="#" id="ativasLink">Ativas</a></li>
+                <li><a id="aguardando" href="#">Aguardando (7)</a></li>
+                <li><a id="bloqueadas" href="#">Bloqueadas (9)</a></li>
+                <li><a id="desativadas" href="#">Desativadas (4)</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="menuAtual">
+        <h1 id="title">
+            Lojas
+            <a href="http://localhost/MisterCheff-Form/index.html" style="color: white;"><button id="cadastroLoja">+ Cadastrar Loja</button></a>
+        </h1>
+        <div>
+            <div id="cadastrosSalvos">
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        fetch('get_lojas.php')
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data); // Verifique os dados no console
+                                const cadastrosSalvos = document.getElementById('cadastrosSalvos');
+                                data.forEach(loja => {
+                                    const lojaDiv = document.createElement('div');
+                                    lojaDiv.className = 'loja';
+
+                                    const logoImg = document.createElement('img');
+                                    logoImg.src = loja.logomarca;
+                                    logoImg.alt = `Logo da loja ${loja.nome_loja}`;
+
+                                    const nomeLoja = document.createElement('h2');
+                                    nomeLoja.textContent = loja.nome_loja;
+
+                                    const contatoLoja = document.createElement('p');
+                                    contatoLoja.textContent = `Contato: ${loja.contato}`;
+
+                                    lojaDiv.appendChild(logoImg);
+                                    lojaDiv.appendChild(nomeLoja);
+                                    lojaDiv.appendChild(contatoLoja);
+
+                                    cadastrosSalvos.appendChild(lojaDiv);
+                                });
+                            })
+                            .catch(error => console.error('Erro ao buscar dados das lojas:', error));
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

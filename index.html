@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro MisteCheff</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header id="logo">
+        <img src="imgs/Logo-MisterCheff.svg">
+    </header>
+    <section>
+        <div id="container">
+            <div id="titleContato">
+                <h1 style="font-family: Arial, Helvetica, sans-serif; color: rgba(39, 39, 39, 0.808);">Formulário de cadastro Mistercheff</h1>
+                <h5 style="font-family: Arial, Helvetica, sans-serif; color: rgb(39, 39, 39, 0.808);">Venha fazer parte do futuro</h5>
+            </div>
+            <form id="formulario" method="POST" action="data.php" enctype="multipart/form-data">
+                <div id="containerForm">
+                    <div id="containerContate">
+                        <input type="text" name="nomeLoja" id="nomeLoja" required placeholder="">
+                        <label id="labelNomeLoja">Nome da Loja <small>*</small></label>
+                        <input type="text" name="CNPJ" id="CNPJ" required placeholder="">
+                        <label id="labelCNPJ">CNPJ <small>*</small></label>
+                        <input type="email" name="email" id="email" required placeholder="">
+                        <label id="labelEmail">E-mail <small>*</small></label>
+                        <input type="text" name="contato" id="contato" required placeholder="">
+                        <label id="labelContato">Telefone / Celular <small>*</small></label>    
+                    </div>
+                    <div id="containerAdress">
+                        <input type="text" name="rua" id="rua" required placeholder="">
+                        <label id="labelRua">Rua <small>*</small></label>
+                        <input type="text" name="numero" id="numero" required placeholder="">
+                        <label id="labelNumero">N° <small>*</small></label>
+                        <input type="text" name="complemento" id="complemento" placeholder="">
+                        <label id="labelComplemento">Complemento</label>
+                        <input type="tel" name="CEP" id="CEP" required placeholder="">
+                        <label id="labelCEP">CEP <small>*</small></label>
+                        <input type="text" name="bairro" id="bairro" required placeholder="">
+                        <label id="labelBairro">Bairro <small>*</small></label>
+                        <input type="text" name="cidade" id="cidade" required placeholder="">
+                        <label id="labelCidade">Cidade <small>*</small></label>
+                        <input type="text" name="estado" id="estado" required placeholder="">
+                        <label id="labelEstado">UF <small>*</small></label>
+                    </div>
+                </div>
+                <div id="fileBox">
+                    <input type="file" id="imageFile" name="logomarca">
+                    <label for="imageFile" id="custom-imageFile"> Escolha a Logo</label>
+                    <div id="file-name" class="file-name">
+                        Nenhum arquivo selecionado
+                    </div>
+                    <div id="image-preview-container" style="display:none;">
+                        <img id="image-preview" src="" alt="Imagem selecionada" />
+                        <div id="image-name"></div>
+                    </div>
+                </div>
+                <input type="submit" id="submitButtom" value="Enviar Dados">
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>

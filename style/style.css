@@ -1,0 +1,614 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+small {
+    color: red;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #F7F7F7;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+}
+
+#container {
+    background-color: white;
+    width: 550px;
+    box-shadow: 0px 0px 15px #888888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os grupos de inputs */
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#titleContato {
+    border-bottom: 2px solid rgb(209, 209, 209);
+    width: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#containerContate {
+    text-align: center;
+    position: relative;
+}
+
+#nomeLoja {
+    margin: 15px 5px 0px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#CNPJ {
+    margin: 15px 10px 0px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#email {
+    margin: 20px 5px 15px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#contato {
+    margin: 20px 10px 15px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#labelNomeLoja {
+    pointer-events: none;
+    position:absolute;
+    bottom: 63%;
+    left: 2.6%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#nomeLoja:focus {
+    border-bottom-color: #FF6600;
+}
+
+#nomeLoja:focus ~ #labelNomeLoja, 
+#nomeLoja:not(:placeholder-shown) ~ #labelNomeLoja {
+    transform: translateY(-22px) translateX(-1px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#labelCNPJ {
+    pointer-events: none;
+    position:absolute;
+    bottom: 63%;
+    left: 51.6%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#CNPJ:focus {
+    border-bottom-color: #FF6600;
+}
+
+#CNPJ:focus ~ #labelCNPJ,
+#CNPJ:not(:placeholder-shown) ~ #labelCNPJ {
+    transform: translateY(-21px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#labelEmail {
+    pointer-events: none;
+    position:absolute;
+    bottom: 20px;
+    left: 2.6%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#email:focus {
+    border-bottom-color: #FF6600;
+}
+
+#email:focus ~ #labelEmail,
+#email:not(:placeholder-shown) ~ #labelEmail {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#labelContato {
+    pointer-events: none;
+    position:absolute;
+    bottom: 20%;
+    left: 51.6%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#contato:focus {
+    border-bottom-color: #FF6600;
+}
+
+#contato:focus ~ #labelContato,
+#contato:not(:placeholder-shown) ~ #labelContato {
+    transform: translateY(-19px) translateX(-1px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#containerAdress {
+    margin-top: -10px;
+    text-align: center;
+    position: relative;
+}
+
+#CEP {
+    margin: 15px 5px 15px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#CEP:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelCEP {
+    pointer-events: none;
+    position:absolute;
+    bottom: 43%;
+    left: 52.1%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#CEP:focus ~ #labelCEP,
+#CEP:not(:placeholder-shown) ~ #labelCEP {
+    transform: translateY(-22px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#rua {
+    margin: 15px 15px 15px 10px;
+    width: 400px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#rua:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelRua {
+    pointer-events: none;
+    position:absolute;
+    bottom: 77%;
+    left: 3%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#rua:focus ~ #labelRua,
+#rua:not(:placeholder-shown) ~ #labelRua {
+    transform: translateY(-22px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#numero {
+    margin: 15px 5px 15px 10px;
+    width: 91px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#numero:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelNumero {
+    pointer-events: none;
+    position:absolute;
+    bottom: 77%;
+    left: 81.2%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#numero:focus ~ #labelNumero,
+#numero:not(:placeholder-shown) ~ #labelNumero {
+    transform: translateY(-22px) translateX(-1px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#complemento {
+    margin: 15px 5px 15px 10px;
+    width: 250px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#complemento:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelComplemento {
+    pointer-events: none;
+    position:absolute;
+    bottom: 44%;
+    left: 3.2%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#complemento:focus ~ #labelComplemento,
+#complemento:not(:placeholder-shown) ~ #labelComplemento {
+    transform: translateY(-20px) translateX(-1px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#bairro {
+    margin: 15px 5px 15px 10px;
+    width: 220px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#bairro:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelBairro {
+    pointer-events: none;
+    position:absolute;
+    bottom: 10%;
+    left: 3.2%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#bairro:focus ~ #labelBairro,
+#bairro:not(:placeholder-shown) ~ #labelBairro {
+    transform: translateY(-22px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#cidade {
+    margin: 15px 5px 15px 10px;
+    width: 210px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#cidade:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelCidade {
+    pointer-events: none;
+    position:absolute;
+    bottom: 10%;
+    left: 46.8%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#cidade:focus ~ #labelCidade,
+#cidade:not(:placeholder-shown) ~ #labelCidade {
+    transform: translateY(-22px) translateX(-1px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#estado {
+    margin: 15px 5px 15px 10px;
+    width: 50px;
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid silver;
+    font-size: 15px;
+}
+
+#estado:focus {
+    border-bottom-color: #FF6600;
+}
+
+#labelEstado {
+    pointer-events: none;
+    position:absolute;
+    bottom: 10%;
+    left: 88.3%;
+    color: grey;
+    transition: 0.3s;
+}
+
+#estado:focus ~ #labelEstado,
+#estado:not(:placeholder-shown) ~ #labelEstado {
+    transform: translateY(-22px);
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+}
+
+#fileBox {
+    margin-top: 13px;
+    width: 270px;
+    max-height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+#imageFile {
+    display: none;
+}
+
+#custom-imageFile {
+    color: white;
+    text-align: center;
+    background-color: rgb(255, 85, 0);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#file-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 10px 0px;
+    white-space: nowrap; /* Impedi que o texto quebrasse linhas */
+    overflow: hidden; /* Escondi o texto que ultrapassa a largura */
+    text-overflow: ellipsis; /* Adicionei reticências no texto longo */
+}
+
+#image-preview-container {
+    margin-top: 15px; /* Espaço para o preview */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px; /* Tamanho máximo do container */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#image-preview {
+    width: 70%; /* A imagem ocupando % do container */
+    border-radius: 10px;
+    object-fit: contain; /* Mantém a imagem dentro do container sem distorcer */
+}
+
+#submitButtom {
+    width: 275px;
+    height: 40px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(13,146,13);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #submitButtom:hover {
+    transform: scale(1.05);
+  }
+/* Tooltip Nome da Loja */
+#tooltip {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip CNPJ */
+#tooltip-cnpj {
+    position: absolute;
+    background-color: #ffcccb;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip E-mail */
+#tooltip-email {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Telefone */
+#tooltip-contato {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Rua */
+#tooltip-rua {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Número do Estabelecimento */
+#tooltip-numero {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Complemento */
+#tooltip-complemento {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip CEP */
+#tooltip-cep {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Bairro */
+#tooltip-bairro {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Cidade */
+#tooltip-cidade {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
+
+/* Tooltip Estado (UF) */
+#tooltip-estado {
+    position: absolute;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 250px;
+}
